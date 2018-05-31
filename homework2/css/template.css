@@ -1,0 +1,156 @@
+body{
+    margin :0 auto;
+    padding:0;
+    background-image: url("../images/background.png");
+    font-size:8pt;
+    font-family: Verdana,Tahoma,sans-serif;
+}
+
+.main{
+    width: 800px;
+    overflow: hidden;
+    border:4px solid gray;
+    border-radius: 20px;
+    margin: auto;
+    position: relative;
+}
+
+#banner {
+    background-image: url('../images/rbg.png');
+    height: 50px;
+}
+
+#banner > img {
+    margin: 0 auto;
+    display: block;
+}
+
+/* Header */
+#header{
+    text-align: center;
+    font-size: 12pt;
+    text-shadow: 3px 3px #999999;
+    font-weight: bold;
+}
+
+/* Comments */
+.contentComments{
+    padding:10px;
+}
+.contentComments .comment{
+    width: 47%;
+    display: inline-block;
+    margin-right: 2%;
+}
+.contentComments .comment .text{
+    border:2px solid gray;
+    border-radius:10px;
+    background: #E8DC9B;
+    font-size: 8pt;
+    font-weight: bold;
+    padding:8px 8px 16px 8px;
+}
+.contentComments .comment .text q{
+    vertical-align: text-bottom;
+}
+.contentComments .comment img{
+    float:left;
+    padding-right:5px;
+}
+.contentComments .comment:nth-child(2n){
+    float: right;
+}
+.contentComments .comment .user{
+    margin-bottom: 20pt;
+}
+
+.contentComments .comment .user img{
+    margin-right: 5px;
+    margin-bottom:10px;
+}
+/* contentLeft */
+.contentLeft{
+    position: relative;
+    width: 70%;
+    float:left;
+}
+.contentLeft > .banner{
+    background-image: url('../images/rbg.png');
+    height: 83px;
+    font-size: 48pt;
+    color: red;
+    font-weight: bold;
+}
+.contentLeft > .banner img{
+    float:left;
+}
+.contentRight{
+    position: relative;
+    width: 30%;
+    background: #A2B964;
+    float:left;
+}
+.contentRight dt{
+    font-weight: bold;
+}
+.contentRight dd{
+    margin-bottom: 10pt;
+}
+.contentRight dl {
+    padding: 10pt;
+    font-family: Arial, sans-serif;
+}
+.contentRight dl dd ul{
+    list-style-type: none;
+    padding: 0;
+}
+/* Bottom */
+.contentBottom{
+    width: 100%;
+    text-align: center;
+    background: #A2B964;
+    position: absolute;
+    bottom:0;
+}
+/* Checker */
+.checker{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    opacity: 0.5;
+}
+/* Comments */
+.contentComments{
+    padding:10px;
+}
+.contentComments .comment{
+    width: 47%;
+    display: inline-block;
+    margin-right: 2%;
+}
+.contentComments .comment .text{
+    border:2px solid gray;
+    border-radius:10px;
+    background: #E8DC9B;
+    font-size: 8pt;
+    font-weight: bold;
+    padding:8px 8px 16px 8px;
+}
+.contentComments .comment .text q{
+    vertical-align: text-bottom;
+}
+.contentComments .comment img{
+    float:left;
+    padding-right:5px;
+}
+.contentComments .comment:nth-child(2n){
+    float: right;
+}
+.contentComments .comment .user{
+    margin-bottom: 20pt;
+}
+
+.contentComments .comment .user img{
+    margin-right: 5px;
+    margin-bottom:10px;
+}
