@@ -1,0 +1,59 @@
+header {
+    text-align: center;
+    color: red;
+    margin: 10px;
+    text-shadow: 2px 2px black;
+    font-weight: bold;
+    font-size: 45pt;
+}
+body {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+form {
+    /*max-width: 50px;*/
+    border: 1px solid slateblue;
+    margin: 50px;
+    background-color: antiquewhite;
+    width: 400px;
+    overflow: hidden;
+    display: block;
+    /*border-radius: 10px;*/
+
+}
+
+.line {
+    display: inline-block;
+    max-resolution: 5px;
+    padding: 5px;
+}
+
+.mysubmit {
+    display: inline-block;
+    margin: 5px;
+}
+
+/*input [type="submit"] {*/
+    /*background-color: deeppink;*/
+/*}*/
+
+.submit {
+    background-color: deeppink;
+}
+
+fieldset {
+    overflow: hidden;
+    width: 300px;
+    display: inline-block;
+}
+
+.labels {
+    float: left;
+    width: 100px;
+}
+
+.inputs {
+    float: left;
+    width: 200px;
+}

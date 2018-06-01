@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <title>Retrieve Grade</title>
+</head>
+<body>
+<header>
+    Student Grades Form
+</header>
+    <form action="http://mumstudents.org/params.php" method="get" autocomplete="on" >
+        <div class="line">
+            <label>Name: </label>
+            <input type="text" name="name" size="10" maxlength="20">
+        </div>
+        <br>
+        <div class="line">
+            <label>Student Id: </label>
+            <input type="text" name="studentId" size="10" maxlength="6">
+        </div>
+        <br>
+        <div class="line">
+            <label>Course: </label>
+            <select name="assignmentsName">
+                <option value="asd">ASD</option>
+                <option value="wap">WAP</option>
+                <option value="algo">Algorithm</option>
+                <option value="mpp">MPP</option>
+            </select>
+        </div>
+        <br>
+        <div class="line">
+            <label>Entry: </label>
+            <input type="radio" name="entry" value="10/2017"/>10/2017
+            <input type="radio" name="entry" value="8/2017"/>8/2017
+            <input type="radio" name="entry" value="2/2018"/>2/2018
+            <input type="radio" name="entry" value="4/2018"/>4/2018
+        </div>
+        <br>
+        <div class="mysubmit">
+            <input type="reset" name="reset" value="Reset" />
+            <input type="submit" name="submit" value="submit" />
+            <input type="checkbox" name="check" /> I aggree...
+        </div>
+    </form>
+    <footer>
+        <hr />
+        <p>
+            Results and page (C) Copyright Yuliang Jin.
+        </p>
+        <a href="https://webster.cs.washington.edu/validate-html.php">
+            <img src="images/w3c-html5.png" alt="Valid HTML" />
+        </a>
+        <a href="https://webster.cs.washington.edu/validate-css.php">
+            <img src="images/w3c-css.png" alt="Valid CSS" />
+        </a>
+    </footer>
+</body>
+</html>
