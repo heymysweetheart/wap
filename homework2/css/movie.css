@@ -52,7 +52,7 @@ dl dt {
 }
 
 dd {
-    margin-bottom: 10pt;
+    margin-bottom: 10px;
 }
 
 .main {
@@ -106,7 +106,7 @@ dd {
     font-weight: bold;
     /*padding: 8px 8px 16px 8px;*/
     padding: 4px;
-    margin-bottom: 20pt;
+    margin-bottom: 5px;
 }
 
 .user image {
