@@ -1,0 +1,38 @@
+body {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+form {
+    /*max-width: 50px;*/
+    margin: 50px;
+    background-color: gray;
+    width: 315px;
+    overflow: hidden;
+    border-radius: 10px;
+
+}
+
+/*input [type="submit"] {*/
+    /*background-color: deeppink;*/
+/*}*/
+
+.submit {
+    background-color: deeppink;
+}
+
+fieldset {
+    overflow: hidden;
+    width: 300px;
+    display: inline-block;
+}
+
+.labels {
+    float: left;
+    width: 100px;
+}
+
+.inputs {
+    float: left;
+    width: 200px;
+}
