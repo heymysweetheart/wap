@@ -16,6 +16,7 @@ public class QuizServlet extends HttpServlet {
     req.getSession().setAttribute("quiz", quiz);
     req.getSession().setAttribute("index", 0);
     req.getSession().setAttribute("question", quiz.getQuestion());
+    req.getSession().setAttribute("result", 0);
     RequestDispatcher dispatcher = req.getRequestDispatcher("/quiz.jsp");
     dispatcher.forward(req, resp);
   }
