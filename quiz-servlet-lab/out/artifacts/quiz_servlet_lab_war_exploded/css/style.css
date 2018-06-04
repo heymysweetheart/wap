@@ -1,0 +1,10 @@
+form {
+    width: 500px;
+    border: 1px solid black;
+}
+
+body {
+    width: 800px;
+    margin-right: auto;
+    margin-left: auto;
+}
