@@ -7,11 +7,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class QuizServletNew extends HttpServlet {
 
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    System.out.println("Thread: " + Thread.currentThread().getId() + "Servlet: " + this);
     QuizNew quiz = new QuizNew(0, 0);
     req.getSession().invalidate();
     req.getSession().setAttribute("quiz", quiz);
@@ -27,7 +29,18 @@ public class QuizServletNew extends HttpServlet {
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     QuizNew quiz = (QuizNew) req.getSession().getAttribute("quiz");
+    req.getSession().setAttribute("errorMsg", null);//Remove all the error message
     String answer = req.getParameter("answer");
+    try {
+      int i = Integer.parseInt(answer);
+      if(i < 4 || i > 100) {
+        processError(req, resp, "Answer should be between 4 and 100");
+        return;
+      }
+    } catch (NumberFormatException e) {
+      processError(req, resp, "You should input a number");
+      return;
+    }
     if(isCorrectAnswer(answer, quiz)) {
       req.getSession().setAttribute("correctAnswer", "");
       quiz.setScore(quiz.getScore() + quiz.getNewScore(quiz));
@@ -84,6 +97,22 @@ public class QuizServletNew extends HttpServlet {
     }
 
     req.getSession().setAttribute("result", quiz.getScore());
+  }
+
+  private void processError(HttpServletRequest req, HttpServletResponse resp, String errorMsg) {
+    HttpSession session = req.getSession();
+    QuizNew quiz = (QuizNew) session.getAttribute("quiz");
+    quiz.setCurrentAttempt(quiz.getCurrentAttempt() + 1);
+    req.getSession().setAttribute("currentAttempt", quiz.getCurrentAttempt());
+    session.setAttribute("errorMsg", errorMsg);
+    RequestDispatcher dispatcher = req.getRequestDispatcher("/quiznew.jsp");
+    try {
+      dispatcher.forward(req, resp);
+    } catch (ServletException e) {
+      e.printStackTrace();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 
   private String getFinalGrade(int score) {

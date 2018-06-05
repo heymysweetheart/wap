@@ -22,6 +22,7 @@
       <br>
       <label>Your answer:</label>
       <input type="text" name="answer" value="${sessionScope.get("correctAnswer")}">
+      <span>${sessionScope.get("errorMsg")}</span>
       <br>
       <%--two submit buttons--%>
       <input type="submit" value="next" formaction="/newquiz" formmethod="post"/>
@@ -33,7 +34,6 @@
     <%--<button onclick="showHint(${sessionScope.get("hint")})">Show hint</button>--%>
     <button onclick="showH()">Show hint!</button>
 
-    <p>${sessionScope.get("errorMsg")}</p>
       <br>
     <script>
         function showHint(hint) {
