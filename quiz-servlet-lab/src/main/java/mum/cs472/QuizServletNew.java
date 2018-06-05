@@ -13,11 +13,13 @@ public class QuizServletNew extends HttpServlet {
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     QuizNew quiz = new QuizNew(0, 0);
+    req.getSession().invalidate();
     req.getSession().setAttribute("quiz", quiz);
     req.getSession().setAttribute("index", 0);
     req.getSession().setAttribute("question", quiz.getQuestion());
     req.getSession().setAttribute("result", 0);
     req.getSession().setAttribute("currentAttempt", 0);
+    req.getSession().setAttribute("hint", quiz.getHint());
     RequestDispatcher dispatcher = req.getRequestDispatcher("/quiznew.jsp");
     dispatcher.forward(req, resp);
   }
@@ -38,6 +40,7 @@ public class QuizServletNew extends HttpServlet {
         req.getSession().setAttribute("quiz", quiz);
         req.getSession().setAttribute("result", quiz.getScore());
         req.getSession().setAttribute("question", quiz.getQuestion());
+        req.getSession().setAttribute("hint", quiz.getHint());
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/quiznew.jsp");
         requestDispatcher.forward(req, resp);
       } else {//Turn to another page to show the result
@@ -53,11 +56,12 @@ public class QuizServletNew extends HttpServlet {
         req.getSession().setAttribute("quiz", quiz);
         req.getSession().setAttribute("result", quiz.getScore());
         req.getSession().setAttribute("question", quiz.getQuestion());
+        req.getSession().setAttribute("hint", quiz.getHint());
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/quiznew.jsp");
         requestDispatcher.forward(req, resp);
       } else { //Fully used the 3 attempts and has to show next question
         //If currentIndex exceeds 4, then go to result page
-        if(quiz.getCurrentIndex() < QuizNew.getQuestions().length -1) {
+//        if(quiz.getCurrentIndex() < QuizNew.getQuestions().length -1) {
           quiz.setCurrentAttempt(quiz.getCurrentAttempt() + 1);
 //          quiz.setCurrentIndex(quiz.getCurrentIndex() + 1);//After fully use all the three chances, still return to
 // the previous question, but with the right answer shown.
@@ -66,14 +70,15 @@ public class QuizServletNew extends HttpServlet {
           req.getSession().setAttribute("result", quiz.getScore());
           req.getSession().setAttribute("correctAnswer", quiz.getAnswer());//show the right answer
           req.getSession().setAttribute("question", quiz.getQuestion());
+          req.getSession().setAttribute("hint", quiz.getHint());
           RequestDispatcher requestDispatcher = req.getRequestDispatcher("/quiznew.jsp");
           requestDispatcher.forward(req, resp);
-        } else {
-          req.getSession().invalidate();
-          req.setAttribute("result", getFinalGrade(quiz.getScore()));
-          RequestDispatcher requestDispatcher = req.getRequestDispatcher("/resultnew.jsp");
-          requestDispatcher.forward(req, resp);
-        }
+//        } else {
+//          req.getSession().invalidate();
+//          req.setAttribute("result", getFinalGrade(quiz.getScore()));
+//          RequestDispatcher requestDispatcher = req.getRequestDispatcher("/resultnew.jsp");
+//          requestDispatcher.forward(req, resp);
+//        }
 
       }
     }

@@ -14,7 +14,7 @@
   <body>
     <h1>The Number Quiz</h1>
     <h1>Quiz number ${sessionScope.get("index") + 1}</h1>
-    <form action="/newquiz" method="post">
+    <form action="/newquiz" >
       <p>Your current score is: ${sessionScope.get("result")}.</p>
         <p>Attempt ${sessionScope.get("currentAttempt")} / 3</p>
       <p>Guess the next number in the sequence.</p>
@@ -24,12 +24,26 @@
       <input type="text" name="answer" value="${sessionScope.get("correctAnswer")}">
       <br>
       <%--two submit buttons--%>
-      <input type="submit" value="next" formaction="/newquiz"/>
+      <input type="submit" value="next" formaction="/newquiz" formmethod="post"/>
       <input type="submit" value="Restart!" formaction="/newquiz" formmethod="get"/>
+      <input type="hidden" id="hiddenInput" value="${sessionScope.get("hint")}">
     </form>
 
-      <p>${sessionScope.get("errorMsg")}</p>
+
+    <%--<button onclick="showHint(${sessionScope.get("hint")})">Show hint</button>--%>
+    <button onclick="showH()">Show hint!</button>
+
+    <p>${sessionScope.get("errorMsg")}</p>
       <br>
-      <input type="submit" value="next" />
+    <script>
+        function showHint(hint) {
+            window.alert(hint)
+        }
+
+        function showH() {
+            var hint = document.getElementById("hiddenInput").value
+            window.alert(hint)
+        }
+    </script>
   </body>
 </html>
