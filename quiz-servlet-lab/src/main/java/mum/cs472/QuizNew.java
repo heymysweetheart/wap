@@ -1,6 +1,6 @@
 package mum.cs472;
 
-public class Quiz {
+public class QuizNew {
   public static String[] questions = {
       "3,1,4,1,5", //pi
       "1,1,2,3,5", //fibonacci
@@ -12,6 +12,28 @@ public class Quiz {
   public static int[] answers = {
       9, 8, 36, 13, 32
   };
+
+  public static String[] hints = {
+     "PI",
+     "Fibonacci",
+     "Square",
+     "Primes",
+     "Power of 2"
+  };
+
+  private int currentAttempt = 0;
+
+  public int getCurrentAttempt() {
+    return currentAttempt;
+  }
+
+  public void setCurrentAttempt(int currentAttempt) {
+    this.currentAttempt = currentAttempt;
+  }
+
+  public String getHint() {
+    return hints[currentIndex];
+  }
 
   private int currentIndex=0;
 
@@ -26,7 +48,7 @@ public class Quiz {
   }
 
   public static void setQuestions(String[] questions) {
-    Quiz.questions = questions;
+    QuizNew.questions = questions;
   }
 
   public static int[] getAnswers() {
@@ -34,7 +56,7 @@ public class Quiz {
   }
 
   public static void setAnswers(int[] answers) {
-    Quiz.answers = answers;
+    QuizNew.answers = answers;
   }
 
   public int getCurrentIndex() {
@@ -53,7 +75,7 @@ public class Quiz {
     this.score = score;
   }
 
-  public Quiz(int currentIndex, int score) {
+  public QuizNew(int currentIndex, int score) {
     this.currentIndex = currentIndex;
     this.score = score;
   }
@@ -62,4 +84,13 @@ public class Quiz {
     return questions[currentIndex];
   }
 
+  public int getNewScore(QuizNew quiz) {
+    int currentAttempt = quiz.getCurrentAttempt();
+    switch (currentAttempt) {
+      case 0: return 10;
+      case 1: return 5;
+      case 2: return 2;
+      default: return 0;
+    }
+  }
 }

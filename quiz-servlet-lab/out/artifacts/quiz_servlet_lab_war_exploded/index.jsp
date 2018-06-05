@@ -14,5 +14,8 @@
   <body>
     <p1>Click bellow to start the quiz</p1>
     <p><a href="/quiz">Get quizs</a></p>
+    <br>
+    <p1>Click bellow to start the new version quiz</p1>
+    <p><a href="/newquiz">Get new quizs</a></p>
   </body>
 </html>

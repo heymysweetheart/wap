@@ -1,4 +1,4 @@
-<%--
+<%@ page import="mum.cs472.Quiz" %><%--
   Created by IntelliJ IDEA.
   User: leo
   Date: 6/3/18
@@ -8,14 +8,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>Quiz Index</title>
+    <title>Quiz Result</title>
     <link type="text/css" rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <p1>Click bellow to start the quiz</p1>
-    <p><a href="/quiz">Get quizs</a></p>
-    <br>
-    <p1>Click bellow to start the new version quiz</p1>
-    <p><a href="/newquiz">Get new quizs</a></p>
+    <p1>Quiz Result</p1>
+    <p>Your final score is: <span>${requestScope.get("result")}</span></p>
+
+    <p1>Click bellow to restart the test</p1>
+    <p><a href="/newquiz">Get quizs</a></p>
   </body>
 </html>

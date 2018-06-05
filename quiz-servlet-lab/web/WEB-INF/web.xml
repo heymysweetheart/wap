@@ -13,4 +13,14 @@
         <servlet-name>Quiz</servlet-name>
         <url-pattern>/quiz</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>QuizNew</servlet-name>
+        <servlet-class>mum.cs472.QuizServletNew</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>QuizNew</servlet-name>
+        <url-pattern>/newquiz</url-pattern>
+    </servlet-mapping>
 </web-app>
