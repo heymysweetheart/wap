@@ -11,6 +11,6 @@
     <title>maintaining state demo</title>
   </head>
   <body>
-
+    <a href="/state">Get state</a>
   </body>
 </html>

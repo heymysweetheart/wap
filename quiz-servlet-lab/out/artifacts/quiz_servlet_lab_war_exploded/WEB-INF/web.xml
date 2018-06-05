@@ -23,4 +23,14 @@
         <servlet-name>QuizNew</servlet-name>
         <url-pattern>/newquiz</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BearSelector</servlet-name>
+        <servlet-class>mum.cs472.BeerSelect</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>BearSelector</servlet-name>
+        <url-pattern>/selectbeer</url-pattern>
+    </servlet-mapping>
 </web-app>

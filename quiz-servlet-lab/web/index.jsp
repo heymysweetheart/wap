@@ -17,5 +17,8 @@
     <br>
     <p1>Click bellow to start the new version quiz</p1>
     <p><a href="/newquiz">Get new quizs</a></p>
+
+    <p1>Beer selector</p1>
+    <p><a href="/beeradvisior.html">Go to choose beer</a></p>
   </body>
 </html>
