@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tip Calculator</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+<body>
+    <div id="banner">
+        <img src="./images/calc.jpg"/>
+        <h1>Tip Calculator</h1>
+    </div>
+
+    <div class="c_line">
+        <input type="text" id="subTotal" size="20" />
+        <label>$ Subtotal</label>
+    </div>
+    <div class="c_line">
+        <input id="tipPercent" type="text" size="20" />
+        <label>% Tip</label>
+    </div>
+    <button onclick="calculateTip()" id="calButton">Calculate Tip</button>
+    <hr>
+    <p>Your total: </p>
+    <label id="tipResult">$0.00</label>
+
+    <script>
+        function calculateTip() {
+            // var subtotal;
+            // var tipPercent = null;
+            // var result;
+            try {
+                var subtotal = parseFloat(document.getElementById("subTotal").value);
+                var tipPercent = parseInt(document.getElementById("tipPercent").value);
+                var result = "$" +  subtotal * (1 + tipPercent / 100).toFixed(2);
+                document.getElementById("tipResult").innerHTML = result;
+            } catch (e) {
+                var result = "Input error";
+                document.getElementById("tipResult").innerHTML = result;
+            }
+        }
+    </script>
+</body>
+</html>
