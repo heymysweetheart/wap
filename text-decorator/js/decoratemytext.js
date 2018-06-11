@@ -13,6 +13,31 @@ function pageLoad() {
     input.onchange = changeFont;
     var fontButton = document.getElementById("changeFontFamily");
     fontButton.onclick = changeToPigLatin;
+    var malkovitchButton = document.getElementById("malkovitch");
+    malkovitchButton.onclick = malkovitch;
+}
+
+function malkovitch() {
+    var originalText = document.getElementById("myTextArea").value;
+    document.getElementById("myTextArea").value = getMalkovitch(originalText);
+}
+
+function getMalkovitch(originalText) {
+    var end = "";
+    var array = originalText.split(" ");
+    var i;
+
+    function getMalkov(word) {
+        if(word.length > 4) {
+            return "Malkovich";
+        }
+        return word;
+    }
+
+    for(i =0; i<array.length;i++) {
+        end += getMalkov(array[i]) + " ";
+    }
+    return end;
 }
 
 function setTimer() {
@@ -41,10 +66,10 @@ function getPigLatin(originalText) {
 
 function getPL(word) {
     if(isVowelStarted(word)) {
-        return word + "ay";
+        return word + "ay ";
     } else {
         var c = word.charAt(0);
-        var ret = word.substring(1, word.length).concat(c) + "ay";
+        var ret = word.substring(1, word.length).concat(c) + "ay ";
         return ret;
     }
 }
