@@ -34,6 +34,8 @@ body {
 
 .controlField {
     /*width: 25%;*/
+    /*margin: 20px;*/
+    margin-left: 70px;
     border: 5px solid black;
     display: inline;
     vertical-align: top;
@@ -46,7 +48,7 @@ body {
     display: inline-block;
     /*vertical-align: top;*/
     /*text-align: center;*/
-    width: 80%;
+    width: 90%;
     /*margin-right: auto;*/
     /*margin-left: auto;*/
     margin: 0px auto;
@@ -57,4 +59,10 @@ body {
     bottom: 0;
     right: 0;
     opacity: 0.5;
+}
+
+fieldset {
+    display: inline;
+    /*border: 5px solid black;*/
+    /*vertical-align: top;*/
 }
