@@ -139,7 +139,7 @@ In the servlet method, get the requestDispatcher of the new JSP page, then forwa
 8. What does the operation getJspBody().invoke(null) do when called in a doTag() method?
 The container processes the JSP content found in the body of the tag just like any other JSP page content. If the invoke method is passed null as its argument, the resulting output of that JSP content is passed verbatim to the client. Therefore, the doTag method has no way of accessing the tag body output. All it can do is pass it along.
 
-js:
+## js:
 1. What is the difference between the following 2 statements? 
 setTimeout(booyah, 2000); 
 setTimeout(booyah(), 2000);
@@ -171,7 +171,7 @@ Unobtrusive Javascript is a general approach to use javascript in html.
 The practical application of Unobtrusive Javascript is to separate function or behavior from the content and presentation. It’a best practice because javascript codes will not be mingled together with the html codes.
 
 
-Javascript Scope Exercises
+## Javascript Scope Exercises
     1. Determine what this Javascript code will print out (without running it):
 <!DOCTYPE html>
 <html>
