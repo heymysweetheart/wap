@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<p id="demo"></p>
+
+<script>
+
+    var Person = function() {
+            var name,age, salary;
+
+            var getAge = function() {
+                return this.age;
+            };
+
+            var getName = function() {
+                return this.name;
+            };
+
+            var getSalary = function() {
+                return this.salary;
+            };
+
+            person = {
+                setAge: function (age) {
+                    this.age = age;
+                },
+                setName: function (name) {
+                    this.name = name;
+                },
+                setSalary: function (salary) {
+                    this.salary = salary;
+                },
+                increaseSalary: function(percentage) {
+                    var newSalary = this.salary * (1 + percentage);
+                    //When call other private method, 'this' is mandatory
+                    this.setSalary(newSalary);
+                    return newSalary;
+                },
+                incrementAge: function () {
+                    var newAge = this.age + 1;
+                    this.age = newAge;
+                    return newAge;
+                }
+            };
+
+            return person;
+    }();
+
+    var leo = Person;
+    leo.setName("leo");
+    leo.setAge(15);
+    leo.setSalary(250000);
+    var newSalary = leo.increaseSalary(1.5);
+    var newAge = leo.incrementAge();
+
+    document.getElementById("demo").innerHTML = "New Salary: " + newSalary + ", New age is: " + newAge;
+
+</script>
+
+</body>
+</html>

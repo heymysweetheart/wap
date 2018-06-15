@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<p id="demo"></p>
+
+<script>
+
+    var Person = function() {
+            var name,age, salary, address;
+
+            var getAge = function() {
+                return this.age;
+            };
+
+            var getName = function() {
+                return this.name;
+            };
+
+            var getSalary = function() {
+                return this.salary;
+            };
+
+            var setAge = function(newAge) {
+                this.age = newAge;
+            };
+
+            var setName = function(name) {
+                this.name = name;
+            };
+
+            var setSalary = function(salary) {
+                this.salary = salary;
+            };
+
+            var increaseSalary = function(percentage) {
+                var newSalary = this.salary * (1 + percentage);
+                //When call other private method, 'this' is mandatory
+                this.setSalary(newSalary);
+                return newSalary;
+            };
+
+            var incrementAge = function() {
+                var newAge = this.age + 1;
+                this.setAge(newAge);
+                return newAge;
+            };
+
+            var getAddress = function () {
+                return this.address;
+            }
+
+            var setAddress = function (address) {
+               this.address = address;
+            }
+
+        return {
+            address: address,
+            setAge: setAge,
+            setName: setName,
+            setSalary: setSalary,
+            increaseSalary: increaseSalary,
+            incrementAge: incrementAge,
+            getAddress: getAddress,
+            setAddress: setAddress
+        };
+    }();
+
+    var leo = Person;
+    leo.setName("leo");
+    leo.setAge(15);
+    leo.setSalary(250000);
+    leo.setAddress("North 2000");
+    var newSalary = leo.increaseSalary(1.5);
+    var newAge = leo.incrementAge();
+
+    document.getElementById("demo").innerHTML = "New Salary: " + newSalary + ", New age is: " + newAge +
+                                                ", address is: " + leo.address;
+
+</script>
+
+</body>
+</html>
