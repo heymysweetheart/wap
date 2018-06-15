@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery demo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("div > h1").css("backgroundColor", "red");
+            // var value = $("p").text();
+            // alert(value);
+            $("p").append("Yes!");
+        });
+    </script>
+</head>
+<body>
+<h1>abc</h1><br><div>
+    <h1>div-1</h1>
+    <h1>div-2</h1>
+</div>
+<h1>xyz</h1>
+<button>Click me</button>
+
+<p>Is jQuery FUN or what? </p>
+</body>
+</html>
