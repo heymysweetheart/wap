@@ -8,8 +8,24 @@ $(document).ready(function loadJs() {
         gameStatus = 1;
         cheat = 0;
         hit = 0;
-        $("#gameMessage").text("Now you are starting the game...");
+        $(".boundary").css("background-color", "#eeeeee");
+        $("#status").text("Now you are starting the game...")
     });
+
+    $("#boundary1").mouseover(function () {
+      if(gameStatus === 1) {
+          $(this).css('background-color', 'red');
+
+          // $("boundary1").css("background-color","red");
+      }
+    });
+
+    $(".boundary").mouseover(function () {
+        if(gameStatus === 1) {
+            hit++;
+            $(".boundary").css("background-color", "red");
+        }
+    })
 
     $("#maze").mouseleave(function () {
         if(gameStatus === 1) {
@@ -23,7 +39,7 @@ $(document).ready(function loadJs() {
                 $("#gameMessage").text("You win the game.");
                 gameStatus = 0;
             }else {
-                $("#gameMessage").text("You lose the game, press S to start again");
+                $("#status").text("You lose the game, press S to start again")
             }
         }
     });
