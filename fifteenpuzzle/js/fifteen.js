@@ -148,6 +148,7 @@ var shuffleControle = (function () {
             var div = divObjects[i];
             if($(div).hasClass("movablepiece")) {
                 $(div).removeClass("movablepiece");
+                $(div).unbind("click");
             }
         }
 
@@ -161,16 +162,10 @@ var shuffleControle = (function () {
         }
     };
 
-    var shuf = function () {
-        var randShuff = setInterval(randomShuffle, 10);
-    }
-
-
     var shuffle = function () {
         init.start();//Put every div in the beginning place so every shuffle begin with the same state
         //Todo: change the shuffle times here
-        setIntervalX(randomShuffle, 10, 20);
-        // var timeout = setTimeout(shuf, 1000);
+        setIntervalX(randomShuffle, 10, 100);
     };
 
     return {
@@ -212,12 +207,6 @@ var init = (function() {
     };
 
     var bind = function () {
-        // $("#movablepiece").click(function () {
-        //     shuffleControle.change(this);
-        //     shuffleControle.rebindEvent();
-        //
-        // });
-
         $("#shufflebutton").click(function () {
             shuffleControle.shuffle();
         });
