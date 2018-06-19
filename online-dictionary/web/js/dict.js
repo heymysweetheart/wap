@@ -23,14 +23,20 @@ var showData = function (data) {
     // }
 
     // alert(data[0].definition);
-
     var result = "";
+    // $("#result-list").innerText(result);
+
+
+    $('#result-list br').remove();
+    $('#result-list li').remove();
+
     for(var i=0;i<data.length;i++) {
         var type = data[i].wordtype;
         $("#result-list").append("<li><em>" + type + "</em>, " + data[i].definition + "</li><br>");
     }
 
-    $("#result-list").innerText(result);
+    var word = data[0].word;
+    $("#dict-word span").text(word);
 }
 
 function showError() {
