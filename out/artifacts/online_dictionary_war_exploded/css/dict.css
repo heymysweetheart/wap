@@ -7,16 +7,30 @@ body {
 }
 
 .dict-container {
+    vertical-align: top;
     position: center;
     display: inline-block;
+    height: 50px;
+    font-size: 25px;
 }
 
 #dict-main {
     align-items: left;
-    height: 500px;
     width: 90%;
     margin: 20px;
     border: 1px solid gray;
     position: relative;
 }
 
+#word-input {
+    background-color: beige;
+    width: 400px;
+    height: 40px;
+    font-size: 25px;
+    margin: 5px;
+}
+
+#lookup {
+    background-color: beige;
+    height: 40px;
+}

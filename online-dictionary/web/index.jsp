@@ -22,8 +22,9 @@
         <button id="lookup" type="button" value="Lookup">Lookup</button>
     </div>
     <div id="dict-main">
-        <h2 id="dict-word"><span></span></h2>
-        <ul id="result-list"></ul>
+        <h2 id="dict-word"><span>dictionary</span></h2>
+        <ol id="result-list">
+        </ol>
     </div>
     <hr>
 
