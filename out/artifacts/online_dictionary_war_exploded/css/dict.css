@@ -1,0 +1,21 @@
+body {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: antiquewhite;
+    text-align: left;
+}
+
+.dict-container {
+    position: center;
+    display: inline-block;
+}
+
+#dict-main {
+    align-items: left;
+    height: 500px;
+    width: 90%;
+    margin: 20px;
+    border: 1px solid gray;
+}
+
