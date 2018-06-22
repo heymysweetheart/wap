@@ -7,13 +7,15 @@ body {
 }
 
 .dict-container {
-    vertical-align: top;
     position: center;
     display: inline-block;
     height: 50px;
     font-size: 25px;
 }
 
+.dict-container > * {
+    vertical-align: middle;
+}
 #dict-main {
     align-items: left;
     width: 90%;

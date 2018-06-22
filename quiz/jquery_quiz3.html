@@ -63,10 +63,14 @@
 <script>
     // <!—INSERT YOUR JQUERY CODE HERE - - >
     $(document).ready(function () {
-        var text = $("p :first").text();
-        $("p :last").html(text);
+        // var text = $("p :first").text();
+        // $("p :last").html(text);
 
-        $("li .item-a").siblings().andSelf().css("background-color", "red");
+        var text = $("p").first().text();
+        $("p").last().html(text);
+
+        // $("li .item-a").siblings().andSelf().css("background-color", "red");
+        $("li .item-a").parent().css("background-color", "red");
 
         $(".third-item").prev().css("background-color", "blue");
 
